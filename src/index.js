@@ -9,8 +9,6 @@ function createMainWindow() {
         width: 640,
         height: 480
     })
-
-    mainWindow.loadURL(`file://${__dirname}/windows/mainWindow.html`)
 }
 
 app.on('window-all-closed', () => {
@@ -25,6 +23,13 @@ app.on('activate', () => {
     }
 })
 
+function onClosed() {
+    mainWindow = null
+}
+
 app.on('ready', () => {
     createMainWindow()
+
+    mainWindow.loadURL(`file://${__dirname}/windows/mainWindow.html`)
+    mainWindow.on(('closed', onClosed))
 })
