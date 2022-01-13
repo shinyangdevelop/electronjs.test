@@ -4,6 +4,11 @@ const {app, BrowserWindow} = electron
 
 let mainWindow
 
+// const greets = require('./data/greet.json')
+// const messages = greets.message
+
+// console.log(messages[0])
+
 function createMainWindow() {
     mainWindow = new BrowserWindow({
         width: 640,
@@ -31,5 +36,5 @@ app.on('ready', () => {
     createMainWindow()
 
     mainWindow.loadURL(`file://${__dirname}/windows/mainWindow.html`)
-    mainWindow.on(('closed', onClosed))
+    mainWindow.on('closed', onClosed)
 })

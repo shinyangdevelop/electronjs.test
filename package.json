@@ -4,11 +4,20 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "electron": "^16.0.6"
+  "devDependencies": {
+    "electron": "^16.0.7",
+    "electron-packager": "^15.4.0"
+  },
+  "build": {
+    "appId": "com.shinyangdevelop.electrontest",
+    "productName": "Electron Test",
+    "nsis": {
+      "oneClick": false
+    }
   }
 }
